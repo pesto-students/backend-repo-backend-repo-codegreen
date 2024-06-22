@@ -1,0 +1,11 @@
+{"level":"error","message":"Status-500 - Message- user Update data is invalid.","method":"POST","timestamp":"2024-06-22T04:17:50.656Z","url":"/api/plantation/createNewPlantation","userEmail":"akhil1@gmail.com"}
+{"level":"error","message":"Status-401 - Message- Token is invalid or userId is invalid","method":"POST","timestamp":"2024-06-22T09:22:35.659Z","url":"/api/forum/create","userEmail":"N/A"}
+{"level":"error","message":"Status-401 - Message- Token is invalid or userId is invalid","method":"POST","timestamp":"2024-06-22T09:22:35.744Z","url":"/api/forum/create","userEmail":"N/A"}
+{"level":"error","message":"Status-500 - Message- userId is not defined","method":"POST","timestamp":"2024-06-22T09:33:27.375Z","url":"/api/forum/create","userEmail":"akhil1@gmail.com"}
+{"level":"error","message":"Status-500 - Message- newForum is not defined","method":"POST","timestamp":"2024-06-22T09:34:40.706Z","url":"/api/forum/create","userEmail":"akhil1@gmail.com"}
+{"level":"error","message":"Status-500 - Message- Forum validation failed: date: Cast to date failed for value \"22-06-2024\" (type string) at path \"date\"","method":"POST","timestamp":"2024-06-22T09:35:19.658Z","url":"/api/forum/create","userEmail":"akhil1@gmail.com"}
+{"level":"error","message":"Status-500 - Message- Unexpected token } in JSON at position 129","method":"POST","timestamp":"2024-06-22T10:08:50.500Z","url":"/api/forum/create","userEmail":"akhil1@gmail.com"}
+{"level":"error","message":"Status-500 - Message- uploadToCloudinaryPromise is not defined","method":"POST","timestamp":"2024-06-22T10:09:27.859Z","url":"/api/forum/create","userEmail":"akhil1@gmail.com"}
+{"level":"error","message":"Status-500 - Message- uploadImageToCloudinary is not defined","method":"POST","timestamp":"2024-06-22T10:10:31.633Z","url":"/api/forum/create","userEmail":"akhil1@gmail.com"}
+{"level":"error","message":"Status-500 - Message- Assignment to constant variable.","method":"PATCH","timestamp":"2024-06-22T10:41:43.751Z","url":"/api/forum/6676a342ea7f8b9db46d5e9e","userEmail":"akhil1@gmail.com"}
+{"level":"error","message":"Status-500 - Message- Cannot populate path `comments.authorId` because it is not in your schema. Set the `strictPopulate` option to false to override.","method":"GET","timestamp":"2024-06-22T10:50:05.362Z","url":"/api/forum","userEmail":"akhil1@gmail.com"}
