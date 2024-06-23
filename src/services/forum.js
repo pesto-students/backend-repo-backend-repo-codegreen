@@ -43,6 +43,7 @@ const createNewForumPost = async (userId, forumDetails, images) => {
 
       cloudinaryUrls = await Promise.all(uploadToCloudinaryPromise);
     }
+
     const newForumPost = new Forum();
     (newForumPost.title = forumDetails?.title),
       (newForumPost.description = forumDetails?.description),

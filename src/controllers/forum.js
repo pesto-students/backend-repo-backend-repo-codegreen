@@ -7,7 +7,7 @@ import {
 const createPost = async (req, res, next) => {
   try {
     const { id } = req?.token ?? {};
-    const images = req?.files?.images;
+    let images = req?.files?.images;
     const details = JSON.parse(req?.body?.details);
 
     if (!id) {
@@ -20,6 +20,12 @@ const createPost = async (req, res, next) => {
       const error = new Error("Form Details are invalid");
       error.status = 400;
       throw error;
+    }
+
+    if (images) {
+      if (!Array.isArray(images)) {
+        images = [images];
+      }
     }
 
     const createdForum = await createNewForumPost(id, details, images);
