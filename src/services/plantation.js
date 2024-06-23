@@ -132,6 +132,7 @@ const updateUserPlantation = async (id, image, details, userId) => {
       error.status = 400;
       throw error;
     }
+
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
 

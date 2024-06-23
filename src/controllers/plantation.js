@@ -95,7 +95,12 @@ const updatePlantation = async (req, res, next) => {
       req?.token?.id
     );
     return res.status(200).send(updatedPlantation);
-  } catch (error) {}
+  } catch (error) {
+    next({
+      message: error?.message || "Internal server error",
+      status: error.status || 500,
+    });
+  }
 };
 
 export {

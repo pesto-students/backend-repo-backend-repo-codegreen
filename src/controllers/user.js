@@ -1,6 +1,7 @@
 import { getSingleUser, createNewUser, updateUser } from "../services/user.js";
 import { generateToken } from "../services/token.js";
 import { verifyPassword } from "../services/bcrypt.js";
+import mongoose from "mongoose";
 
 /** Below function will handle the user SignUp  */
 const handleUserSignUp = async (req, res, next) => {
@@ -88,4 +89,27 @@ const editUser = async (req, res, next) => {
   }
 };
 
-export { handleUserSignUp, handleUserLogin, editUser };
+/** Below function is used to get the single user details */
+const getSingleUserDetails = async (req, res, next) => {
+  try {
+    const { id } = req?.params ?? {};
+    if (!id) {
+      const error = new Error("User Id invalid.");
+      error.status = 400;
+      throw error;
+    }
+
+    const singleUserDetails = await getSingleUser({
+      _id: new mongoose.Types.ObjectId(id),
+    });
+
+    return res.status(200).send(singleUserDetails);
+  } catch (error) {
+    next({
+      message: error?.message || "Internal server error",
+      status: error.status || 500,
+    });
+  }
+};
+
+export { handleUserSignUp, handleUserLogin, editUser, getSingleUserDetails };
