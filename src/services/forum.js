@@ -21,10 +21,10 @@ const createNewForumPost = async (userId, forumDetails, images) => {
     }
 
     let cloudinaryUrls;
+    let imagePaths = [];
     /** If user is uploading images then upload it to cloudinary and then store the cloudinary urls*/
     if (images && images?.length) {
       const addFilesToLocalDiskPromises = [];
-      const imagePaths = [];
       /** add images to local disk */
       images?.forEach((image) => {
         const imagePath = path.join(__dirname, "..", "images", image.name);
