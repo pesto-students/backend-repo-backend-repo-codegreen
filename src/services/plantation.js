@@ -161,6 +161,9 @@ const updateUserPlantation = async (id, image, details, userId) => {
       { new: true }
     );
 
+    /** UPDATE POINTS IN USER COLLECTION */
+    await updateUser(userId, { $inc: { points } });
+
     /** DELETE THE LOCAL FILE  */
     await fsPromises.unlink(imagePath);
     return updatedData;

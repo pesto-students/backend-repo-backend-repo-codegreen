@@ -51,6 +51,10 @@ const createNewUser = async (userData) => {
   }
 };
 
+/** Below function is used to update the user details
+ * @param userId,updateData
+ * @returns object of updated user
+ */
 const updateUser = async (userId, updateData) => {
   try {
     if (!userId) {

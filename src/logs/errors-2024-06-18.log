@@ -1,6 +1,0 @@
-{"level":"error","message":"Status-400 - Message- latitude or longitude is missing.","method":"GET","timestamp":"2024-06-18T13:01:29.399Z","url":"/api/utils/getAddress/:latitude/:longitude","userEmail":"N/A"}
-{"level":"error","message":"Status-400 - Message- latitude or longitude is missing.","method":"GET","timestamp":"2024-06-18T13:03:04.712Z","url":"/api/utils/getAddress/40.753/-73.983","userEmail":"N/A"}
-{"level":"error","message":"Status-400 - Message- latitude or longitude is missing.","method":"GET","timestamp":"2024-06-18T13:03:07.076Z","url":"/api/utils/getAddress/40.753/-73.983","userEmail":"N/A"}
-{"level":"error","message":"Status-400 - Message- latitude or longitude is missing.","method":"GET","timestamp":"2024-06-18T13:03:46.174Z","url":"/api/utils/getAddress/40.753/-73.983","userEmail":"N/A"}
-{"level":"error","message":"Status-400 - Message- latitude or longitude is missing.","method":"GET","timestamp":"2024-06-18T13:04:04.204Z","url":"/api/utils/getAddress/40.753/-73.983","userEmail":"N/A"}
-{"level":"error","message":"Status-500 - Message- ReferenceError: axios is not defined","method":"GET","timestamp":"2024-06-18T13:06:42.226Z","url":"/api/utils/getAddress/40.753/-73.983","userEmail":"N/A"}

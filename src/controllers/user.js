@@ -1,4 +1,4 @@
-import { getSingleUser, createNewUser } from "../services/user.js";
+import { getSingleUser, createNewUser, updateUser } from "../services/user.js";
 import { generateToken } from "../services/token.js";
 import { verifyPassword } from "../services/bcrypt.js";
 
@@ -53,4 +53,39 @@ const handleUserLogin = async (req, res, next) => {
   }
 };
 
-export { handleUserSignUp, handleUserLogin };
+/** Below function is used to update the user details */
+const editUser = async (req, res, next) => {
+  try {
+    const { id } = req?.token ?? {};
+    const { reduceUserPoints } = req?.query ?? {};
+    const editData = req?.body ?? {};
+    if (!id) {
+      const error = new Error("User Id or token is invalid.");
+      error.status = 400;
+      throw error;
+    }
+    if (!editData || !Object.keys(editData)?.length) {
+      const error = new Error("Edit Data is invalid.");
+      error.status = 400;
+      throw error;
+    }
+
+    if (editData?.points) {
+      if (reduceUserPoints === "false")
+        editData.$inc = { points: editData?.points };
+      else if (reduceUserPoints === "true")
+        editData.$inc = { points: -editData?.points };
+      delete editData.points;
+    }
+
+    const editedUserDetails = await updateUser(id, editData);
+    return res.status(200).send(editedUserDetails);
+  } catch (error) {
+    next({
+      message: error?.message || "Internal server error",
+      status: error.status || 500,
+    });
+  }
+};
+
+export { handleUserSignUp, handleUserLogin, editUser };

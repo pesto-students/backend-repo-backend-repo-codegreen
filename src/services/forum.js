@@ -55,6 +55,9 @@ const createNewForumPost = async (userId, forumDetails, images) => {
       (newForumPost.createdBy = userId);
     newForumPost.date = moment().utc();
 
+    /** DELETE THE LOCAL FILES  */
+    imagePaths?.forEach((imagePath) => fsPromises.unlink(imagePath));
+
     const createdForumPost = await newForumPost.save();
     return createdForumPost;
   } catch (error) {
