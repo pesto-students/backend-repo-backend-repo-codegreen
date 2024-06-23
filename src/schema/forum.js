@@ -9,14 +9,17 @@ const Forum = new mongoose.Schema({
     type: Date,
     default: () => new Date(),
   },
-  comments: [
-    {
-      _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
-      author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-      date: { type: Date, default: () => new Date() },
-      comment: { type: String, required: true },
-    },
-  ],
+  comments: {
+    type: [
+      {
+        _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
+        author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        date: { type: Date, default: () => new Date() },
+        comment: { type: String, required: true },
+      },
+    ],
+    default: [],
+  },
   imageUrls: {
     type: [String],
     default: [],

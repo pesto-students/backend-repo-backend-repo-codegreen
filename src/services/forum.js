@@ -89,7 +89,6 @@ const updateForumPostData = async (userId, updateData, forumPostId) => {
     let commentsToUpdate = [];
     if (updateData?.comments) {
       const forumPostInDB = await Forum.findById(forumPostId);
-
       commentsToUpdate = [...forumPostInDB?.comments, ...updateData?.comments];
       updateData.comments = commentsToUpdate;
     }
@@ -98,7 +97,7 @@ const updateForumPostData = async (userId, updateData, forumPostId) => {
       forumPostId,
       updateData,
       { new: true }
-    );
+    ).populate("comments.author");
     return updatedComments;
   } catch (error) {
     throw error;
